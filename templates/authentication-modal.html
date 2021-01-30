@@ -1,0 +1,183 @@
+<!-- banner -->
+<div class="agileits-banner">
+    <div class="bnr-agileinfo">
+
+        <!-- //navigation -->
+        <div class="banner-w3text w3layouts">
+
+            <p class="w3_text">Your next step can change the life of an animal</p>
+            <h2>Pets Adoption</h2>
+            <h3 class="w3ls_agile"></h3>
+
+
+        </div>
+
+    </div>
+</div>
+<!-- //banner -->
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="login-close-button" type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Sign In</h3>
+                    <div class="login-form">
+                        <form id="login-form" action="/login" method="post">
+                            <input type="email" id="login-email" placeholder="E-mail" required="">
+                            <span  class="error-msg" id="login-email-error"></span>
+                            <input type="password" id="login-password" placeholder="Password" required="">
+                            <span  class="error-msg" id="login-password-error"></span>
+                            <div class="tp">
+                                <button id="login-submit" type="submit">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="login-social-grids">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                    </div>
+                    <p><a href="#" data-dismiss="modal"  data-toggle="modal" data-target="#myModal3"> Don't have an account? Click to register</a></p>
+                    <p><a id="forgot-password" href="#"data-dismiss="modal"  data-toggle="modal" data-target="#myModal6"> Forgot password</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal2 -->
+<!-- Modal3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button  type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div id="signin-form" class="signin-form profile">
+                    <h3 class="agileinfo_sign">Sign Up</h3>
+                    <div class="login-form">
+                        <form id="register-form"  method="post">
+                            <input type="email" id="register-email" placeholder="E-mail" required>
+                            <span  class="error-msg" id="register-email-error"></span>
+                            <input type="password" id="register-password" placeholder="Password" required>
+                            <span class="error-msg" id="register-password-error"></span>
+                            <input type="password" id="register-repeat-password" placeholder="Repeat-password" required>
+                            <span class="error-msg" id="register-repeat-password-error"></span>
+                            <div class="tp">
+                                <button id="register-submit" type="submit">Register</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <p><a href="#"data-dismiss="modal"  data-toggle="modal" data-target="#myModal2"> Already have account? Click to login</a></p>
+                    <button style="display: none" id="verification-redirect" data-dismiss="modal" data-toggle="modal" data-target="#myModal4"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal3 -->
+<!-- Modal4 -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Verification</h3>
+                    <div class="login-form">
+                        <input type="text" id="verify-code" placeholder="Enter verification code sent to your email" required>
+                        <span class="error-msg" id="verify-code-error"></span>
+                        <div class="tp">
+                            <button id="verify-submit" type="submit">Verify</button>
+                        </div>
+
+                    </div>
+                    <button style="display: none" id="success-redirect" data-dismiss="modal" data-toggle="modal" data-target="#myModal5"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal4 -->
+<!-- Modal5 -->
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Registration successful</h3>
+                    <div class="login-form">
+                        <div style="background: url('../public/images/success-icon.png') no-repeat center; height: 50px; background-size: contain" ></div>
+                        <p style="text-align: center">You have been registered successfully!</p>
+                        <div class="tp">
+                            <button id="login-redirect" type="submit" data-dismiss="modal" data-toggle="modal" data-target="#myModal2">Return to Login</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal5 -->
+<!-- Modal6 -->
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 class="agileinfo_sign">Forgot password</h3>
+                    <span class="success-msg" id="forgot-password-success"></span>
+                    <div class="login-form">
+                        <input type="text" id="forgot-email" placeholder="Enter your email to send new password" required>
+                        <span class="error-msg" id="forgot-password-error"></span>
+
+                        <div class="tp">
+                            <button id="forgot-btn" type="submit">Send Email</button>
+                        </div>
+
+                    </div>
+                    <p><a href="#"data-dismiss="modal"  data-toggle="modal" data-target="#myModal2"> Back to Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal6 -->
+<!-- Modal7 -->
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                <div class="signin-form profile">
+                    <h3 id="alert-modal-header" class="agileinfo_sign">Registration successful</h3>
+                    <div class="login-form">
+                        <div id="alert-modal-pic" style="height: 50px; background-size: contain" ></div>
+                        <p id="alert-modal-text" style="text-align: center">You have been registered successfully!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button style="display: none;" id="alert-modal-open" data-toggle="modal" data-target="#myModal7">click me</button>
+<!-- //Modal7 -->

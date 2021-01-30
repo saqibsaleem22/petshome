@@ -1,0 +1,401 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Pets Home | Profile </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Pets Care Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<link rel="icon" href="../public/assets/favicon.png">
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<!-- Custom Theme files -->
+	<link href="../public/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<link href="../public/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+	<!-- easy-responsive-tabs -->
+
+	<link href="../public/css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="../public/css/font-awesome.css" rel="stylesheet">
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link rel="stylesheet" href="../public/css/profile.css">
+	<!-- //Custom Theme files -->
+	<!-- js -->
+	<script src="../public/js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Junge" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+		  rel='stylesheet' type='text/css'>
+	<!-- //web-fonts -->
+</head>
+
+<body>
+
+<!-- Loading modals start -->
+{% include 'loading-modal.html' %}
+<!-- Loading modals end -->
+
+<!-- navigation -->
+<div class="top-nav">
+	<div class="agile_inner_nav_w3ls">
+		<div class="navbar-header w3llogo">
+
+			<div class="logo"><h1><a href="">PetsHome</a></h1>
+				<h6 style="color: white;"> Giving them a happy life! </h6></div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="w3menu navbar-left-1">
+				<ul class="nav navbar">
+					<li><a href="./" >Home</a></li>
+					<li><a href="gallery">Adoption</a></li>
+					<li><a href="upload">Place adoption</a></li>
+					<li><a href="contact">Contact</a></li>
+					{% if app.user %}
+						<li><a id="sign-in-profile" class="sign active" href="profile" ><i class="fa fa-user" aria-hidden="true"></i> Go to profile</a></li>
+						<li><a id="sign-out-profile" class="sign" href="logout" ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+					{% else %}
+						<li><a id="sign-in-guest" class="sign" href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a></li>
+					{% endif %}
+
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Authentication modals start -->
+{% include 'authentication-modal.html' %}
+<!-- Authentication modals end -->
+
+
+<div class="main-view">
+	<h3 style="margin-bottom: 10px" class="agileits-title">Profile</h3>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="profile-tab" class="col-lg-4 navbar-profile background-dark-panel"><i class="fa fa-user"></i>  Profile</div>
+			<div id="msg-tab" class="col-lg-4 navbar-profile"><i class="fa fa-comments-o"></i>  Messages</div>
+			<div id="upload-tab" class="col-lg-4 navbar-profile"><i class="fa fa-paper-plane"></i>  My uploads</div>
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- My profile Start-->
+	<div id="profile-content-box" style="margin-top: 50px; margin-bottom: 300px;" class="container bootstrap snippet">
+		<div class="row">
+			<h3 style="text-align: center">Profile settings</h3>
+			<p style="text-align: center">You can see your pet uploads and their status. You can update your password as well.</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"><!--left col-->
+
+
+				<div class="text-center">
+					<img src="../public/avatars/{{ app.user.avatar }}" class="avatar img-circle img-thumbnail" alt="avatar">
+					{#<h6>Upload a different photo...</h6>
+					<input type="file" class="text-center center-block file-upload">#}
+				</div></hr><br>
+
+
+
+
+
+				<ul class="list-group">
+					<li class="list-group-item text-muted">Donation activity <i class="fa fa-dashboard fa-1x"></i></li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Total donations</strong></span> {{ total }}</li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Available pets</strong></span>{{ available }}</li>
+					<li class="list-group-item text-right"><span class="pull-left"><strong>Adopted pets</strong></span>{{ adopted }}</li>
+				</ul>
+
+
+
+			</div><!--/col-3-->
+			<div class="col-sm-9">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">Profile details</a></li>
+				</ul>
+
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="home">
+						<hr>
+						<form class="form" action="/updatePassword" method="post" id="update-password">
+							<div class="form-group">
+
+								<div class="col-xs-12">
+									<label for="first_name"><h4>Your Email</h4></label>
+									<p>{{app.user.email}}</p>
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="form-group">
+
+								<div class="col-xs-12">
+									<label for="password"><h4>Old Password</h4></label>
+									<input type="password" class="form-control" name="password" id="password" placeholder="" title="enter your password.">
+									<span class="error-msg" id="update-password-error"></span>
+								</div>
+							</div>
+							<div class="form-group">
+
+								<div class="col-xs-12">
+									<label for="password2"><h4>New Password</h4></label>
+									<input type="password" class="form-control" name="password2" id="password2" placeholder="" title="enter your password2.">
+									<span class="error-msg" id="update-password2-error"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									<br>
+									<button id="password-update-submit" class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Update password</button>
+								</div>
+							</div>
+						</form>
+
+						<hr>
+
+					</div><!--/tab-pane-->
+
+
+				</div><!--/tab-pane-->
+			</div><!--/tab-content-->
+
+		</div><!--/col-9-->
+	</div><!--/row-->
+	<!-- My profile End-->
+
+
+
+	<!-- My Message Start-->
+	<div style="margin-top: 50px; margin-bottom: 300px; display: none;" id="msg-content-box">
+		<div class="row">
+			<h3 style="text-align: center">My messages</h3>
+			<p style="text-align: center">You can send and receive messages for pet request and adoption conversations.</p>
+		</div>
+	<div id="frame">
+
+		<div id="sidepanel">
+			<div id="profile">
+				<div class="wrap">
+					<img id="profile-img" src="../public/avatars/{{ app.user.avatar }}" class="online" alt="" />
+					<p>{{ app.user.email }}</p>
+					<div id="status-options">
+						<ul>
+							<li id="status-online" class="active"><span class="status-circle"></span> <p>Online</p></li>
+							<li id="status-away"><span class="status-circle"></span> <p>Away</p></li>
+							<li id="status-busy"><span class="status-circle"></span> <p>Busy</p></li>
+							<li id="status-offline"><span class="status-circle"></span> <p>Offline</p></li>
+						</ul>
+					</div>
+					<div id="expanded">
+						<label for="twitter"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></label>
+						<input name="twitter" type="text" value="mikeross" />
+						<label for="twitter"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></label>
+						<input name="twitter" type="text" value="ross81" />
+						<label for="twitter"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></label>
+						<input name="twitter" type="text" value="mike.ross" />
+					</div>
+				</div>
+			</div>
+			<div id="search">
+				<button id="conv-toggle-1" class="conv-toggle background-dark">Request messages</button>
+				<button id="conv-toggle-2" class="conv-toggle">Adoption messages</button>
+			</div>
+			<div id="contacts">
+				<ul id="conversation-list">
+					{#<li class="contact">
+					<div class="wrap">
+						<span class="contact-status online"></span>
+						<img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+						<div class="meta">
+							<p class="name">Louis Litt</p>
+							<p class="preview">You just got LITT up, Mike.</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact active">
+					<div class="wrap">
+						<span class="contact-status busy"></span>
+						<img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+						<div class="meta">
+							<p class="name">Harvey Specter</p>
+							<p class="preview">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status away"></span>
+						<img src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
+						<div class="meta">
+							<p class="name">Rachel Zane</p>
+							<p class="preview">I was thinking that we could have chicken tonight, sounds good?</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status online"></span>
+						<img src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
+						<div class="meta">
+							<p class="name">Donna Paulsen</p>
+							<p class="preview">Mike, I know everything! I'm Donna..</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status busy"></span>
+						<img src="http://emilcarlsson.se/assets/jessicapearson.png" alt="" />
+						<div class="meta">
+							<p class="name">Jessica Pearson</p>
+							<p class="preview">Have you finished the draft on the Hinsenburg deal?</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="http://emilcarlsson.se/assets/haroldgunderson.png" alt="" />
+						<div class="meta">
+							<p class="name">Harold Gunderson</p>
+							<p class="preview">Thanks Mike! :)</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="http://emilcarlsson.se/assets/danielhardman.png" alt="" />
+						<div class="meta">
+							<p class="name">Daniel Hardman</p>
+							<p class="preview">We'll meet again, Mike. Tell Jessica I said 'Hi'.</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status busy"></span>
+						<img src="http://emilcarlsson.se/assets/katrinabennett.png" alt="" />
+						<div class="meta">
+							<p class="name">Katrina Bennett</p>
+							<p class="preview">I've sent you the files for the Garrett trial.</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" />
+						<div class="meta">
+							<p class="name">Charles Forstman</p>
+							<p class="preview">Mike, this isn't over.</p>
+						</div>
+					</div>
+				</li>
+				<li class="contact">
+					<div class="wrap">
+						<span class="contact-status"></span>
+						<img src="http://emilcarlsson.se/assets/jonathansidwell.png" alt="" />
+						<div class="meta">
+							<p class="name">Jonathan Sidwell</p>
+							<p class="preview"><span>You:</span> That's bullshit. This deal is solid.</p>
+						</div>
+					</div>
+				</li>#}
+				</ul>
+			</div>
+		</div>
+		<div id="conv-detail-box"  class="content">
+		<!--Messages are loaded here-->
+			<h3 class="empty-box-msg">Please select a conversation to start messaging.</h3>
+		</div>
+	</div>
+	</div>
+	<!-- My Message End-->
+
+
+
+
+
+
+	<!-- My uploads Start -->
+	<div id="upload-content-box" style="display: none; margin-top: 50px; margin-bottom: 300px;" class="gallery-agileinfo">
+		<h3 style="text-align: center">Uploaded pets</h3>
+		<p style="text-align: center">You can change adoption status for uploaded pets by you.</p>
+		{% for upload in myUploads %}
+		<div class="col-sm-4 col-xs-6 w3gallery-grids">
+			<div class="imghvr-hinge-right figure">
+				<img src="../public/assets/{{ upload.photo }}" alt="" title="Pets Care Image"/>
+				<div class="agile-figcaption">
+					<h6>Pet's Name</h6>
+					<p>{{ upload.name }}</p>
+					<h6>Pet's Category</h6>
+					<p>{{ upload.type }}</p>
+					<p class="adopt-status-uploads">{{ upload.status }}</p>
+				</div>
+
+			</div>
+			<button onclick="changeToAdopted({{ upload.id }}, '{{ upload.status }}')">Adopted</button>
+		</div>
+		{% endfor %}
+
+		<div class="clearfix"> </div>
+
+	</div>
+	<!-- My uploads End-->
+</div>
+
+<!-- footer start -->
+{% include 'footer.html' %}
+<!-- footer end -->
+
+
+
+
+
+
+
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.js"></script>
+<script src="js/Registration&LoginAuth.js"></script>
+<script src="js/MessagesProvider.js"></script>
+<script src="js/profile-manager.js"></script>
+</body>
+
+</html>
